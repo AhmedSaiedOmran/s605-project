@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "94c3237f-2112-41c0-92e9-d56914d346c5",
+		"name": "Master Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "lon",
+							"value": "31.2332714",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "lat",
+							"value": "30.0338764",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "amenity",
+							"value": "cafe",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "اخوياااااااااااااااااااااا",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://master-project.local/api/places/535",
+					"protocol": "http",
+					"host": [
+						"master-project",
+						"local"
+					],
+					"path": [
+						"api",
+						"places",
+						"535"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "lon",
+							"value": "31.2332714",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "lat",
+							"value": "30.0338764",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "amenity",
+							"value": "cafe",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "اخوياااااااااااااااااااااا",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://master-project.local/api/places/535",
+					"protocol": "http",
+					"host": [
+						"master-project",
+						"local"
+					],
+					"path": [
+						"api",
+						"places",
+						"535"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "lon",
+							"value": "31.2332714",
+							"type": "text"
+						},
+						{
+							"key": "lat",
+							"value": "30.0338764",
+							"type": "text"
+						},
+						{
+							"key": "amenity",
+							"value": "cafe",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "اخواتي 23",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://master-project.local/api/places",
+					"protocol": "http",
+					"host": [
+						"master-project",
+						"local"
+					],
+					"path": [
+						"api",
+						"places"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://master-project.local/api/places?name=قهو",
+					"protocol": "http",
+					"host": [
+						"master-project",
+						"local"
+					],
+					"path": [
+						"api",
+						"places"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "قهو"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Elastic Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.104:9200/log-rest/_search",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"104"
+					],
+					"port": "9200",
+					"path": [
+						"log-rest",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

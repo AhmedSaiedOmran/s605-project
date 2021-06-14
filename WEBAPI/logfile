@@ -1,0 +1,57 @@
+2021-06-13 00:53:52,983 DEBUG    Using SelectPoller
+2021-06-13 00:53:52,984 DEBUG    Created default connection workflow <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x000002575A377400>
+2021-06-13 00:53:52,985 DEBUG    Starting AMQP Connection workflow asynchronously.
+2021-06-13 00:53:52,985 DEBUG    call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x000002575A3773A0> with deadline=139447.093 and callback=functools.partial(<bound method AMQPConnectionWorkflow._start_new_cycle_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x000002575A377400>>, first=True); now=139447.093; delay=0
+2021-06-13 00:53:52,985 DEBUG    Beginning a new AMQP connection workflow cycle; attempts remaining after this: 0
+2021-06-13 00:53:52,985 DEBUG    call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x000002575A377340> with deadline=139447.093 and callback=<bound method AMQPConnectionWorkflow._try_next_config_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x000002575A377400>>; now=139447.093; delay=0
+2021-06-13 00:53:52,985 DEBUG    _try_next_config_async: 'localhost':5672
+2021-06-13 00:53:52,991 DEBUG    add_callback_threadsafe: added callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x000002575A377160>>
+2021-06-13 00:53:52,991 DEBUG    process_timeouts: invoking callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x000002575A377160>>
+2021-06-13 00:53:52,991 DEBUG    Invoking asynchronous getaddrinfo() completion callback; host='localhost'
+2021-06-13 00:53:52,991 DEBUG    getaddrinfo returned 2 records
+2021-06-13 00:53:52,991 DEBUG    Attempting to connect using address record (<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2021-06-13 00:53:52,991 INFO     Pika version 1.2.0 connecting to ('::1', 5672, 0, 0)
+2021-06-13 00:53:52,992 DEBUG    add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x000002575A3779A0>>
+2021-06-13 00:53:52,992 DEBUG    call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x000002575A377B20> with deadline=139457.093 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000002575A377AF0>>; now=139447.093; delay=10.0
+2021-06-13 00:53:52,992 DEBUG    call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x000002575A377340> with deadline=139462.093 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000002575A377AF0>>; now=139447.093; delay=15.0
+2021-06-13 00:53:52,992 DEBUG    process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x000002575A3779A0>>
+2021-06-13 00:53:52,992 DEBUG    SelectorIOServicesAdapter.set_writer(544, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x000002575A3779A0>>)
+2021-06-13 00:53:52,992 DEBUG    set_writer(544, _) added handler Wr
+2021-06-13 00:53:52,992 DEBUG    Connection-establishment is in progress for <socket.socket fd=544, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::', 60144, 0, 0), raddr=('::1', 5672, 0, 0)>.
+2021-06-13 00:53:54,994 ERROR    Socket failed to connect: <socket.socket fd=544, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::', 60144, 0, 0)>; error=10061 (Unknown error)
+2021-06-13 00:53:54,995 DEBUG    _AsyncSocketConnector._report_completion(ConnectionRefusedError(10061, 'Unknown error')); <socket.socket fd=544, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::', 60144, 0, 0)>
+2021-06-13 00:53:54,995 DEBUG    SelectorIOServicesAdapter.remove_writer(544)
+2021-06-13 00:53:54,995 DEBUG    remove_writer(544) removed handler
+2021-06-13 00:53:54,995 DEBUG    remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x000002575A377B20> with deadline=139457.093 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000002575A377AF0>>
+2021-06-13 00:53:54,995 ERROR    TCP Connection attempt failed: ConnectionRefusedError(10061, 'Unknown error'); dest=(<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2021-06-13 00:53:54,995 ERROR    AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2021-06-13 00:53:54,995 DEBUG    remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x000002575A377340> with deadline=139462.093 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000002575A377AF0>>
+2021-06-13 00:53:54,995 DEBUG    Connection attempt completed with AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2021-06-13 00:53:54,995 DEBUG    Attempting to connect using address record (<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672))
+2021-06-13 00:53:54,995 INFO     Pika version 1.2.0 connecting to ('127.0.0.1', 5672)
+2021-06-13 00:53:54,995 DEBUG    add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x000002575A377B80>>
+2021-06-13 00:53:54,995 DEBUG    call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x000002575A3773A0> with deadline=139459.093 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000002575A377B50>>; now=139449.093; delay=10.0
+2021-06-13 00:53:54,996 DEBUG    call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x000002575A377940> with deadline=139464.109 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000002575A377B50>>; now=139449.109; delay=15.0
+2021-06-13 00:53:54,996 DEBUG    process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x000002575A377B80>>
+2021-06-13 00:53:54,996 DEBUG    SelectorIOServicesAdapter.set_writer(544, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x000002575A377B80>>)
+2021-06-13 00:53:54,996 DEBUG    set_writer(544, _) added handler Wr
+2021-06-13 00:53:54,996 DEBUG    Connection-establishment is in progress for <socket.socket fd=544, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('0.0.0.0', 60146), raddr=('127.0.0.1', 5672)>.
+2021-06-13 00:53:56,997 ERROR    Socket failed to connect: <socket.socket fd=544, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('0.0.0.0', 60146)>; error=10061 (Unknown error)
+2021-06-13 00:53:56,997 DEBUG    _AsyncSocketConnector._report_completion(ConnectionRefusedError(10061, 'Unknown error')); <socket.socket fd=544, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('0.0.0.0', 60146)>
+2021-06-13 00:53:56,997 DEBUG    SelectorIOServicesAdapter.remove_writer(544)
+2021-06-13 00:53:56,997 DEBUG    remove_writer(544) removed handler
+2021-06-13 00:53:56,997 DEBUG    remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x000002575A3773A0> with deadline=139459.093 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000002575A377B50>>
+2021-06-13 00:53:56,997 ERROR    TCP Connection attempt failed: ConnectionRefusedError(10061, 'Unknown error'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672))
+2021-06-13 00:53:56,997 ERROR    AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2021-06-13 00:53:56,998 DEBUG    remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x000002575A377940> with deadline=139464.109 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000002575A377B50>>
+2021-06-13 00:53:56,998 DEBUG    Connection attempt completed with AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2021-06-13 00:53:56,998 DEBUG    _try_next_resolved_address: continuing with next config.
+2021-06-13 00:53:56,998 DEBUG    _try_next_config_async: starting a new cycle.
+2021-06-13 00:53:56,998 ERROR    AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 2 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error'); first exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error').
+2021-06-13 00:53:56,998 ERROR    AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 2 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error'); first exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2021-06-13 00:53:56,998 ERROR    Connection workflow failed: AMQPConnectionWorkflowFailed: 2 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error'); first exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2021-06-13 00:53:56,998 ERROR    Error in _create_connection().
+Traceback (most recent call last):
+  File "C:\Users\AhmedOmran\AppData\Roaming\Python\Python39\site-packages\pika\adapters\blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
