@@ -1,7 +1,7 @@
 var amqp = require('amqplib/callback_api');
 var request = require('request');
 
-amqp.connect('amqp://guest:guest@192.168.1.104', function (error0, connection) {
+amqp.connect('amqp://guest:guest@localhost', function (error0, connection) {
     if (error0) {
         throw error0;
     }
@@ -25,7 +25,7 @@ amqp.connect('amqp://guest:guest@192.168.1.104', function (error0, connection) {
 
             request.post({
                 headers: { 'content-type': 'application/json' },
-                url: 'http://192.168.1.104:9200/log-rest/_doc',
+                url: 'http://localhost:9200/log-rest/_doc',
                 body:  JSON.stringify({
                     'timestamp': data.timestamp,
                     'request_type': msg.fields.routingKey,
