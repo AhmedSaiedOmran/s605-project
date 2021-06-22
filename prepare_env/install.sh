@@ -79,7 +79,9 @@ sudo echo "DB_USERNAME=root" >> $FILE_LARAVEL_CONF
 sudo echo "DB_DATABASE=places" >> $FILE_LARAVEL_CONF
 sudo echo "DB_PASSWORD=test123.0" >> $FILE_LARAVEL_CONF
 
+
 sudo hostname -I | awk -F\, '{print "AMQP_HOST="""$1}' >> $FILE_LARAVEL_CONF
+sudo php /var/www/WEBAPI/artisan key:generate
 
 sudo truncate -s 0 $FILE_APACHE2_CONF
 
