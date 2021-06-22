@@ -1,5 +1,3 @@
-!/bin/bash
-
 DB_USER="root"
 DB_PASSWORD="test123.0"
 DB_NAME="places"

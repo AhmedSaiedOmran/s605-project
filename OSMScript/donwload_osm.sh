@@ -1,5 +1,3 @@
-!/bin/bash
-
 FILE=osmData/Cairo.osm.gz
 echo "======================================="
 echo "Start Create temp folder"

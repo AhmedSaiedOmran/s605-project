@@ -70,11 +70,12 @@ sudo find /var/www/WEBAPI  -type f -exec chmod 777 {} \;
 sudo find /var/www/WEBAPI  d -exec chmod  777 {} \;
 sudo chgrp -R www-data /var/www/WEBAPI/storage /var/www/WEBAPI/bootstrap/cache
 sudo chmod -R ug+rwx /var/www/WEBAPI/storage /var/www/WEBAPI/bootstrap/cache
-sudo chmod 777 /var/www/WEBAPI/.env
 
 sudo cp /var/www/WEBAPI/.env.example /var/www/WEBAPI/.env
+sudo chmod 777 /var/www/WEBAPI/.env
 
 
+sudo echo "DB_USERNAME=root" >> $FILE_LARAVEL_CONF
 sudo echo "DB_DATABASE=places" >> $FILE_LARAVEL_CONF
 sudo echo "DB_PASSWORD=test123.0" >> $FILE_LARAVEL_CONF
 
@@ -83,5 +84,6 @@ sudo hostname -I | awk -F\, '{print "AMQP_HOST="""$1}' >> $FILE_LARAVEL_CONF
 sudo truncate -s 0 $FILE_APACHE2_CONF
 
 sudo cp apache.conf /etc/apache2/sites-available/000-default.conf
+sudo a2enmod rewrite
 sudo systemctl restart apache2
 sudo forever start consumer.js
