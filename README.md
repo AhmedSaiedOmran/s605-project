@@ -5,7 +5,10 @@
 Clone Repo
 ```sh
 https://github.com/AhmedSaiedOmran/s605-project.git
+cd s605-project/prepare_env
+sudo sh install.sh
 ```
+
 ---
 
 ### Step 2 (Run Prepare enveroniment script)

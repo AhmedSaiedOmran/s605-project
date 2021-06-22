@@ -9,7 +9,7 @@ echo "deb http://archive.ubuntu.com/ubuntu focal main universe" >> $FILE_SOURCES
 echo "deb http://archive.ubuntu.com/ubuntu focal-security main universe" >> $FILE_SOURCES
 echo "deb http://archive.ubuntu.com/ubuntu focal-updates main universe" >> $FILE_SOURCES
 
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update && sudo apt-get upgrade -y
 
 
 sudo apt install apache2 mysql-server git -y
