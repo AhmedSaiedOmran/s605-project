@@ -88,4 +88,8 @@ sudo truncate -s 0 $FILE_APACHE2_CONF
 sudo cp apache.conf /etc/apache2/sites-available/000-default.conf
 sudo a2enmod rewrite
 sudo systemctl restart apache2
+
+sudo npm install amqplib -g --save --silent
+
 sudo forever start consumer.js
+
